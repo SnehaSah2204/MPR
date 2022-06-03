@@ -1,0 +1,272 @@
+.searchbox {
+  width: 25%;
+  background-color: white;
+  border-radius: 30px;
+  height: 30px;
+  padding: 0% 1%;
+  display: flex;
+  margin: 0% 2%;
+
+  align-items: center;
+  justify-items: center;
+  box-shadow: rgba(243, 242, 242, 0.35) 0px 2px 15px;
+}
+.searchbar {
+  outline: none;
+  border: none;
+  width: 95%;
+  font-size: 18px;
+}
+.menuIcon {
+  color: white;
+  font-size: 28px;
+  margin: 0% 1%;
+  cursor: pointer;
+  transition: ease 0.3s;
+}
+
+.menuIcon:hover {
+  transform: rotate(90deg);
+  color: white;
+}
+
+.leftHeader {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  width: 100px;
+}
+
+.userIcon {
+  font-size: 24px;
+  color: white;
+  margin: 0% 1%;
+  cursor: pointer;
+}
+
+.userIcon:hover {
+  color: #03e9f4;
+}
+
+.userName {
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.userName:hover {
+  color: #03e9f4;
+}
+
+.notificationIcon {
+  cursor: pointer;
+  color: white;
+  font-size: 26px;
+}
+
+.notificationIcon:hover {
+  color: #ffe00e;
+}
+
+.lineIcon {
+  color: white;
+  font-size: 30px;
+  transform: rotate(90deg);
+}
+
+.addIcon {
+  cursor: pointer;
+  color: white;
+  font-size: 28px;
+  margin: 0% 0.5%;
+}
+
+.addIcon:hover {
+  color: #03e9f4;
+}
+
+.settingIcon {
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+}
+
+.settingIcon:hover {
+  color: #03e9f4;
+}
+
+.sidenav {
+  color: white;
+  font-size: 26px;
+  display: flex;
+  flex-direction: column;
+  width: 2%;
+  padding: 2% 1%;
+  transform: translateY(-40%);
+  /* transition: ease 0.2s; */
+}
+
+.sidenav-p {
+  transition: ease 0.2s;
+}
+
+.icon {
+  cursor: pointer;
+  margin: 2% 0%;
+  transition: ease-in-out 0.2s;
+}
+
+.icon-active {
+  cursor: pointer;
+  margin: 2% 0%;
+  transition: ease-in-out 0.2s;
+  color: #03e9f4;
+}
+
+.icon:hover {
+  border-bottom: 4px #03e9f4 solid;
+}
+.icon-active:hover {
+  border-bottom: 4px white solid;
+}
+
+.feed {
+  width: 65%;
+  background-color: white;
+  border-radius: 20px;
+  height: 600px;
+  margin: 1% 2%;
+  padding: 0% 2%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+}
+
+.feed::-webkit-scrollbar {
+  display: none;
+}
+
+.post {
+  display: flex;
+  flex-direction: row;
+  width: 88%;
+  height: 200px;
+  margin: 3% 5%;
+  background-color: #243b55;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  color: white;
+  /* padding: 1px 1%;
+  padding-right: 0%; */
+  padding-left: 1%;
+  padding-bottom: 1px;
+}
+
+.reaction {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid white;
+  /* padding: 2% 1% 2% 2%; */
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.reactIconT {
+  display: flex;
+  height: 100%;
+  background-color: #243b55;
+  width: 60px;
+  border-top-right-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  transition: ease 0.22s;
+}
+
+.reactIconT:hover {
+  background-color: white;
+  color: #03e9f4;
+}
+
+.reactIconB {
+  display: flex;
+  height: 100%;
+  background-color: #243b55;
+  width: 60px;
+  border-bottom-right-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  transition: ease 0.22s;
+}
+.reactIconB:hover {
+  background-color: white;
+  color: #03e9f4;
+}
+.icon-r {
+  cursor: pointer;
+  margin: 2% 0%;
+  font-size: 20px;
+  transition: ease-in-out 0.2s;
+}
+
+/* .icon-r:hover {
+  color: #03e9f4;
+} */
+
+.messages {
+  width: 22%;
+  background-color: white;
+  border-radius: 20px;
+  height: 600px;
+  margin: 1% 2%;
+  padding: 0% 2%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+}
+
+.messages::-webkit-scrollbar {
+  display: none;
+}
+
+.robot-icon {
+  font-size: 27px;
+  cursor: pointer;
+  float: right;
+  transition: ease 0.2s;
+}
+
+.robot-icon:hover {
+  color: #03e9f4;
+  animation: move 1s ease;
+}
+
+.heading {
+  font-size: 25px;
+}
+
+.userImg {
+  width: 12%;
+  margin: 0% 2%;
+  border-radius: 100%;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
