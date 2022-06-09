@@ -25,6 +25,7 @@ export const Home =()=>{
     const [style, setStyle] = useState({height:"300px", justifyContent:"space-evenly"})
     const {state,dispatch} = useContext(UserContext);
     const [post,setPost] = useState(null);
+    const [likes, setLikes] = useState([]);
 
     function clickHandler(){
         if(!open){
@@ -35,6 +36,16 @@ export const Home =()=>{
         setStyle({height:"300px", justifyContent:"space-evenly"})
         setOpen(false);
         }
+    }
+
+    const likeHandler=(post)=>{
+        if(likes.includes(post.id)){
+            setLikes(likes=>likes.filter(id=> id!=post.id))
+        }
+        else{
+            setLikes(likes=>[...likes,post.id])
+        }
+
     }
 
     function navigate(location){
@@ -56,19 +67,19 @@ export const Home =()=>{
         getpost(setPost)
     },[])
 
-    const likeHandler = (id,item)=>{
+    // const likeHandler = (id,item)=>{
         
-        const list = post;
-        var newlist = []
-        console.log("hi")
-        // list.map(p=>{
-        //     if(p.id!= id){
-        //         newlist.push(p)
-        //     }
-        // })
+    //     const list = post;
+    //     var newlist = []
+    //     console.log("hi")
+    //     // list.map(p=>{
+    //     //     if(p.id!= id){
+    //     //         newlist.push(p)
+    //     //     }
+    //     // })
 
-        console.log(newlist.length);
-    }
+    //     console.log(newlist.length);
+    // }
 
     // const posts=[];
 
@@ -96,7 +107,6 @@ export const Home =()=>{
     //                 </div>
     //             </div>
     //         </div>
-
     //         <div className='post'>
     //             <div>
     //             <div style={{display:"flex", flexDirection:"row", alignItems:"center", marginTop:"4%", cursor:"pointer"}}>
@@ -172,8 +182,8 @@ export const Home =()=>{
                 </p>
                 </div>
                 <div className='reaction'>
-                    <div className='reactIconT'>
-                    <AiFillLike className='icon-r' style={{color:item.likes.includes(state.email)&&"#03e9f4"}}/>
+                    <div onClick={()=>likeHandler(item)} className='reactIconT'>
+                    <AiFillLike  className='icon-r' style={{color:likes.includes(item.id)&&"#03e9f4"}}/>
                     </div>
                     <div className='reactIconB'>
                     <FaCommentAlt className='icon-r'/>
