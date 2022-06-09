@@ -15,8 +15,10 @@ import {BiNews} from "react-icons/bi"
 import {AiFillLike} from "react-icons/ai"
 import {FaCommentAlt} from "react-icons/fa"
 import {AiFillRobot} from "react-icons/ai"
+import {RiDeleteBin6Line} from "react-icons/ri"
 import {useHistory} from 'react-router-dom'
-import { getpost } from '../firebase';
+import { getpost, deletepost } from '../firebase';
+import { confirm } from "react-confirm-box";
 
 export const Home =()=>{
     const history = useHistory()
@@ -66,6 +68,26 @@ export const Home =()=>{
     useEffect(()=>{
         getpost(setPost)
     },[])
+
+    const deleteHandler = async(post)=>{
+
+        const options = {
+            labels: {
+              confirmable: "Yes",
+              cancellable: "No"
+            }
+          }
+
+        const result = await confirm("Are you sure You want to delete this post?", options);
+        if (result) {
+            deletepost(post)
+            getpost(setPost)
+        return;
+        }
+        alert("Then dont disturb! 😠");
+
+        
+    }
 
     // const likeHandler = (id,item)=>{
         
@@ -169,13 +191,16 @@ export const Home =()=>{
     if(post){
         const Lists =[]
         post.map((item,i)=>{
+            console.log(item)
             Lists.push(
                 <>
                 <div className='post' key={i} >
                 <div>
                 <div style={{display:"flex", flexDirection:"row", alignItems:"center", marginTop:"4%", cursor:"pointer"}}>
                     <img className='userImg' style={{width:"5%"}}  src={require(`./images/u${(i%3)+1}.jpg`)} />    
-                        <p style={{textTransform:"capitalize"}}>{item.postedBy}</p>  
+                        <p style={{textTransform:"capitalize"}}>{ item.postedByEmail==state.email?item.anonymous?"You Posted Anonymously":item.postedBy :item.anonymous?"Anonymous":item.postedBy}</p>  
+                        {item.postedByEmail==state.email&&<RiDeleteBin6Line onClick={()=>deleteHandler(item)} style={{fontSize:"24px",marginLeft:"2%", color:"red"}}/>}    
+                        
                 </div>
                 <p style={{margin:"1% 2%"}}>
                 {item.text}

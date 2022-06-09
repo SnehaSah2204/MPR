@@ -134,10 +134,10 @@ export const AddPost =()=>{
             <p className='heading' style={{letterSpacing:"2px", textAlign:"center"}}>Your Story <BiNews/></p>
             <form>
                 <div className="user-box">
-                <textarea rows={20} cols={100} type="text"
-                style={{marginLeft:"10%",marginRight:"12%"}}
+                <textarea rows={8} cols={60} type="text"
+                style={{marginLeft:"10%",marginRight:"10%",fontSize:"21px",padding:"2%"}}
                 value={story}
-                onChange={(e)=>setStory(e.target.value)}
+                onChange={(e)=>setStory(e.target.value.substring(0,401))}
                 required="True"/>
                 </div>
                 <ToggleSwitch label="Share Anonymous" setAnonymous={setAnonymous} anonymous={anonymous} />

@@ -1,5 +1,6 @@
+import { async } from "@firebase/util";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDoc, setDoc, doc, getDocs, Firestore } from 'firebase/firestore/lite';
+import { getFirestore, collection, getDoc, setDoc, doc, getDocs, Firestore,deleteDoc  } from 'firebase/firestore/lite';
 
 const firebaseConfig = {
     apiKey: "AIzaSyAPimJrtLTDYJrdUh_Se4eQGheJZlayclc",
@@ -43,7 +44,8 @@ const firebaseConfig = {
         text: post.text,
         anonymous: post.anonymous,
         postedBy: post.state.name,
-        likes:[]
+        likes:[],
+        postedByEmail:post.state.email
     }
     var id = generateString(11);
     
@@ -67,10 +69,21 @@ const firebaseConfig = {
         id:dc.id,
         text:dc.data().text,
         likes:dc.data().likes,
-        postedBy:dc.data().postedBy
+        postedBy:dc.data().postedBy,
+        anonymous:dc.data().anonymous,
+        postedByEmail:dc.data().postedByEmail
       })
       });
      setPost(List);
+  }
+
+  export const deletepost = async(post)=>{
+    try{
+    await deleteDoc(doc(db, "Posts", post.id));
+    console.log("deletd");
+    } catch(err){
+      console.log(err);
+    }
   }
 
   export const login =async(user)=>{
