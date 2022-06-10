@@ -5,7 +5,7 @@ import { Signin } from './components/signin';
 import { Signup } from './components/signup';
 import {reducer,intialState} from './reducers/userReducer'
 import { AddPost } from './components/addpost';
-
+import Videocall from './components/videocall';
 
 export const UserContext = createContext()
 
@@ -34,6 +34,9 @@ const Routing = ()=>{
     </Route>
     <Route path = "/addpost">
       <AddPost/>
+    </Route>
+    <Route path = "/talk">
+      <Videocall/>
     </Route>
     </Switch>
   )
