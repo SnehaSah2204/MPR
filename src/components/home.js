@@ -251,7 +251,7 @@ export const Home =()=>{
             {Lists}
          </div>
 
-
+{/* 
          <div className='messages'>
             <div >
                 <p className='heading'>Messages <BiMessageSquareDetail/> <AiFillRobot className='robot-icon'/> </p>
@@ -259,7 +259,11 @@ export const Home =()=>{
             <hr/>
 
             {messages}
-         </div>
+            
+         </div> */}
+         <div>
+        <iframe width="400px" height="600px" style={{borderRadius:"25px", marginRight:"20px"}}   allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/890ac682-7920-4440-ba53-3768fd98d545"></iframe>
+       </div>
          
         </div>
         </>

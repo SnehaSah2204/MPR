@@ -6,6 +6,7 @@ import { Signup } from './components/signup';
 import {reducer,intialState} from './reducers/userReducer'
 import { AddPost } from './components/addpost';
 import Videocall from './components/videocall';
+import Iframe from './components/iframe';
 
 export const UserContext = createContext()
 
@@ -37,6 +38,9 @@ const Routing = ()=>{
     </Route>
     <Route path = "/talk">
       <Videocall/>
+    </Route>
+    <Route path = "/robot">
+      <Iframe/>
     </Route>
     </Switch>
   )

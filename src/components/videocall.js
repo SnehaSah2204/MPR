@@ -23,9 +23,7 @@ const Videocall = ()=>{
             screenShareEnabled: true,
       
             /*
-      
            Other Feature Properties
-            
             */
           };
       
